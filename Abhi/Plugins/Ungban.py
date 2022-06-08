@@ -2,10 +2,10 @@ from pyrogram import filters
 from Abhi.Utils.errors import capture_err
 from Abhi.Core.extract import extract_user
 from Abhi.Database.Gbandb import is_gbanned_user, remove_gban_user
+from Abhi import app, OWNER_ID
 
 
-
-@app.on_message(filters.command("ungban") & SUDOERS & ~filters.edited)
+@app.on_message(filters.command("ungban") & OWNER_ID & ~filters.edited)
 @capture_err
 async def unban_globally(_, message):
     user_id = await extract_user(message)
