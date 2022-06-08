@@ -1,4 +1,4 @@
-from Abhi import bot
+from Abhi import app
 from pyrogram import filters
 from Abhi.Core.admin_check import authorized_users_only
 from pyrogram.types import Message
