@@ -46,7 +46,7 @@ async def start_bot():
     log.info(f"BOT STARTED AS NobitaXD Gban Code!")
     
 
-  if __name__ == "__main__":
+if __name__ == "__main__":
     install()
     with closing(loop):
         with suppress(asyncio.exceptions.CancelledError):
