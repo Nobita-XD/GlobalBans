@@ -5,7 +5,7 @@ from Abhi.Database.Gbandb import add_gban_user
 from Abhi.Database.chats import get_served_chats
 
 
-@app.on_message(filters.command("gban") & OWNER_ID & ~filters.edited)
+@app.on_message(filters.command("gban") & filters.user(OWNER_ID) & ~filters.edited)
 @capture_err
 async def ban_globally(_, message):
     user_id, reason = await extract(message)
