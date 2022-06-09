@@ -4,7 +4,7 @@ from functools import wraps
 
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
-from Abhi import LOG_GROUP_ID, app
+from Abhi import GABN_LOG_GROUP_ID, app
 
 
 def capture_err(func):
@@ -31,5 +31,5 @@ def capture_err(func):
                 ),
             )
             for x in error_feedback:
-                await app.send_message(LOG_GROUP_ID, x)
+                await app.send_message(GBAN_LOG_GROUP_ID, x)
             raise err
