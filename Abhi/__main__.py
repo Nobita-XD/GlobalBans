@@ -13,7 +13,7 @@ async def init():
     await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("Abhi.Plugins." + all_module)
-    log("Abhi.Plugins.").info(
+    log.info(
         "Successfully Imported Modules "
     )
     
