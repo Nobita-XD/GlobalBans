@@ -43,7 +43,7 @@ async def start_bot():
     print("+===============+===============+===============+===============+")
     print(bot_modules)
     print("+===============+===============+===============+===============+")
-    log.info(f"BOT STARTED AS {}!")
+    log.info(f"BOT STARTED AS NobitaXD Gban Code!")
     
 
     restart_data = await clean_restart_stage()
