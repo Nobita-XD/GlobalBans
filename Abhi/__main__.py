@@ -12,8 +12,8 @@ loop = asyncio.get_event_loop()
 async def init():
     await app.start()
     for all_module in ALL_MODULES:
-        importlib.import_module("Abhi.Plugins" + all_module)
-    log("Abhi.Plugins").info(
+        importlib.import_module("Abhi.Plugins." + all_module)
+    log("Abhi.Plugins.").info(
         "Successfully Imported Modules "
     )
     
