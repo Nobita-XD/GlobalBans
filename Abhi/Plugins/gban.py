@@ -3,6 +3,7 @@ from pyrogram import filters
 from Abhi.Core.extract import extract
 from Abhi.Database.Gbandb import add_gban_user
 from Abhi.Database.chats import get_served_chats
+from Abhi.Utils.errors import capture_err
 
 
 @app.on_message(filters.command("gban") & filters.user(OWNER_ID) & ~filters.edited)
