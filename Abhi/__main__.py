@@ -7,7 +7,7 @@ from Abhi import GBAN_LOG_GROUP_ID, app, log
 from Abhi.Plugins import ALL_MODULES
 from Abhi.Utils.restart import clean_restart_stage
 
-loop = asyncio.get_event_loop()
+
 
 HELPABLE = {}
 
