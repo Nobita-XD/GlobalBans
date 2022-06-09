@@ -13,7 +13,7 @@ async def start_bot():
     log.info("[ INFO ] BOT & USERBOT CLIENT STARTED")
     
     await idle()
-    LOGS.info("[ INFO ] BOT & USERBOT CLIENT STOPPED")
+    log.info("[ INFO ] BOT & USERBOT CLIENT STOPPED")
     await app.stop()
 
 
