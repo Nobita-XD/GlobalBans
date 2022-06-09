@@ -19,5 +19,5 @@ async def init():
     
 if __name__ == "__main__":
     loop.run_until_complete(init())
-    log("Abhi").info("Stopping Gban Bot! GoodBye")
+    log.info("Stopping Gban Bot! GoodBye")
     
