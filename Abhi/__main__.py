@@ -45,7 +45,31 @@ async def start_bot():
     print("+===============+===============+===============+===============+")
     log.info(f"BOT STARTED AS NobitaXD Gban Code!")
     
+    restart_data = await clean_restart_stage()
 
+    try:
+        log.info("Sending online status")
+        if restart_data:
+            await app.edit_message_text(
+                restart_data["chat_id"],
+                restart_data["message_id"],
+                "**Restarted Successfully**",
+            )
+
+        else:
+            await app.send_message(LOG_GROUP_ID, "Bot started!")
+    except Exception:
+        pass
+
+    await idle()
+
+
+    await app.stop()
+    log.info("Cancelling asyncio tasks")
+    for task in asyncio.all_tasks():
+        task.cancel()
+    log.info("Dead!")
+    
 if __name__ == "__main__":
     install()
     with closing(loop):
