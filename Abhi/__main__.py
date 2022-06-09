@@ -7,7 +7,7 @@ from Abhi import GBAN_LOG_GROUP_ID, app, log
 from Abhi.Plugins import ALL_MODULES
 from Abhi.Utils.restart import clean_restart_stage
 
-
+loop = asyncio.get_event_loop()
 
 HELPABLE = {}
 
@@ -46,4 +46,9 @@ async def start_bot():
     log.info(f"BOT STARTED AS NobitaXD Gban Code!")
     
 
-    
+  if __name__ == "__main__":
+    install()
+    with closing(loop):
+        with suppress(asyncio.exceptions.CancelledError):
+            loop.run_until_complete(start_bot())
+        loop.run_until_complete(asyncio.sleep(3.0))  
