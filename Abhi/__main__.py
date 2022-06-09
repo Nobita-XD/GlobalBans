@@ -7,16 +7,17 @@ from Abhi import GBAN_LOG_GROUP_ID, app, log
 from Abhi.Plugins import ALL_MODULES
 from Abhi.Utils.restart import clean_restart_stage
 
+loop = asyncio.get_event_loop()
 
-async def start_bot():
+async def init():
     await app.start()
-    log.info("[ INFO ] BOT & USERBOT CLIENT STARTED")
+    for all_module in ALL_MODULES:
+        importlib.import_module("Abhi.Plugins" + all_module)
+    log("Abhi.Plugins").info(
+        "Successfully Imported Modules "
+    )
     
-    await idle()
-    log.info("[ INFO ] BOT & USERBOT CLIENT STOPPED")
-    await app.stop()
-
-
-event = asyncio.get_event_loop_policy()
-event_loop = event.new_event_loop()
-event_loop.run_until_complete(start_bot())        
+if __name__ == "__main__":
+    loop.run_until_complete(init())
+    log("Abhi").info("Stopping Gban Bot! GoodBye")
+    
